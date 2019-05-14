@@ -15,6 +15,11 @@ body {
   background: #00A0E9;
   padding: 5px 0;
 }
+img.ps{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

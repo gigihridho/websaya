@@ -19,8 +19,12 @@ class Home extends React.Component{
                 <br></br>
                 <h3 style={{color: 'white'}}>WEB DEVELOPER &amp; PES ADDICT</h3>
 			    </Col>
-                <img alt="gif" src={{ps}}></img>		
+                
+                		
 	            </Row>
+                
+                <img class="ps" alt="gif" src={ps}></img>
+                
         </div>
 </div>   
                 

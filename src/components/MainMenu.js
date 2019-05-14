@@ -60,7 +60,7 @@ class Navbar extends Component {
       <Breadcrumb style={{ margin: '16px 0' }}>
         
       </Breadcrumb>
-      <div style={{ background: '#0E0B16', minHeight: 500 }}>
+      <div style={{ background: '#0E0B16', minHeight: 530 }}>
       <Switch>
                 <Route exact path="/" component={Home}/>
                 <Route path="/home" component={Home}/>
