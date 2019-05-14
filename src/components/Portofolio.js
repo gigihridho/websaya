@@ -1,89 +1,34 @@
 import React, {Component} from 'react';
-import { Row, Col, Card } from 'antd';
-import andro from '../image/andro.png'
-import web from '../image/web.jpg'
+import axios from 'axios';
+import { Row, Col, Card} from 'antd';
 
 const { Meta } = Card;
+export default class Portofolio extends Component {
+  state = {
+    persons: []
+  }
 
-class Portofolio extends Component {
+  componentDidMount() {
+    axios.get(`https://my-json-server.typicode.com/gigihridho/latihan_pwa_api/mahasiswa`)
+      .then(res => {
+        const persons = res.data;
+        this.setState({ persons });
+      })
+  }
 
-    render() {
-        return (
-            <div class="row">
-            <Row>
-            <Col span={8}>
-            <Card
-            hoverable
-            style={{ width: 240 }}
-            cover={<img alt="Android" src={andro} />}
-            >
-            <Meta
-              title="Weather App"
-              description="Front End Developer"
-            />
-            </Card>
-            </Col>
-            
-
-            <Col span={8}>
-            <Card
-            hoverable
-            style={{ width: 240 }}
-            cover={<img alt="Android" src={andro} />}
-            >
-            <Meta
-              title="QuranKu"
-              description="Front End Developer"
-            />
-            </Card>
-            </Col>
-            
-
-            <Col span={8}>
-            <Card
-            hoverable
-            style={{ width: 240 }}
-            cover={<img alt="Android" src={andro} />}
-            >
-            <Meta
-              title="KosanKu"
-              description="Front End Developer"
-            />
-            </Card>
-            </Col>
+  render() {
+    return (
+      <Row type="flex" justify="center">
+       <Card>
+        <ul>
+        { this.state.persons.map(person => 
+        <Col xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }} > {person.name}</Col>)}
+        </ul>
+        </Card>
         
-            </Row>
-            <br></br>
-            <Row>
-            <Col span={8}>
-                <Card
-                hoverable
-                style={{ width: 240 }}
-                cover={<img alt="Web" src={web} />}
-                >
-                <Meta
-                title="PsychologySays"
-                description="System Analyst"
-                />
-                </Card>
-                </Col>
-
-                <Col span={8}>
-                <Card
-                hoverable
-                style={{ width: 240 }}
-                cover={<img alt="Web" src={web} />}
-                >
-                <Meta
-                title="Disert"
-                description="Front End Developer"
-                />
-                </Card>
-                </Col>
-                </Row>
-                </div>
-        );
-    }
+        
+      
+      </Row>       
+    )
+  }
 }
-
-export default Portofolio;
