@@ -1,20 +1,28 @@
-import React from 'react'
+import React from 'react';
+import {Col, Row} from 'antd';
+import ps from '../image/ps.gif';
 
 class Home extends React.Component{
     render(){
         return(
-            
-                <div class="header">
-        <div class="header-top">
-            <div class="logo"></div>
-            <h3>Welcome To Ramirez</h3>
-            <div class="title-page">
-                <div class="title"><h1>Ramirez Html5 CV Creative Template</h1></div>
-                <a class="btn-demo" data-scroll="" data-options="{ &quot;easing&quot;: &quot;easeOutQuad&quot; }" href="#demos">See Demo</a>
-                <a class="btn-demo" href="#">Buy Now</a>
-            </div>
-        </div> 
-    </div>
+            <div id="headerwrap">
+  		        <div class="container">
+		        <Row>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+				<Col align="center" span={12} offset={6}>
+				<h3 style={{color: 'white'}}>HELLO PEOPLE, MY NAME IS</h3>
+                <h1 style={{color: 'white'}}>GIGIH RIDHO RIDHANA</h1>
+                <br></br>
+                <br></br>
+                <h3 style={{color: 'white'}}>WEB DEVELOPER &amp; PES ADDICT</h3>
+			    </Col>
+                <img alt="gif" src={{ps}}></img>		
+	            </Row>
+        </div>
+</div>   
                 
             
         )
